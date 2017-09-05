@@ -9,11 +9,13 @@ export const ADD_TODO = 'ADD_TODO'
 export const TODO_REPLACE = 'TODO_REPLACE'
 export const TODO_DELETE = 'TODO_DELETE'
 
+// INITIAL STATE
 const state = {
   todos: [],
   currentTodo: ''
 }
 
+// FUNCTION USED TO FILTER TODOS
 export const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case 'active':
@@ -25,11 +27,13 @@ export const getVisibleTodos = (todos, filter) => {
   }
 }
 
+// GETTERS USED BY COMPONENTS
 const getters = {
   todos: state => state.todos,
   currentTodo: state => state.currentTodo
 }
 
+// Asynchronous methods which interact with backend
 const actions = {
   fetchTodos ({ commit }) {
     commit(MESSAGE_SHOW, 'Loading Todos')
@@ -59,6 +63,7 @@ const actions = {
   }
 }
 
+// Vues version of reducers
 const mutations = {
   [LOAD_TODOS] (state, todos) {
     state.todos = [...state.todos, ...todos]
@@ -79,6 +84,7 @@ const mutations = {
   }
 }
 
+// The store
 export default {
   state,
   getters,

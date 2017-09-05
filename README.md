@@ -2,6 +2,12 @@
 
 > a comparison between frameworks and flux style libraries
 
+Before running app, start the local server:
+`npm run dev-server`
+
+While that is running, start the app:
+`npm run start`
+
 ## Build Setup
 
 ``` bash

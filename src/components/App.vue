@@ -2,6 +2,7 @@
   <div class="hello">
       <message></message>
       <add-todo></add-todo>
+      <!--todo list takes one binding which is the active filter (fetched from route query)-->
       <todo-list :filter="activeFilter"></todo-list>
       <my-footer></my-footer>
   </div>
@@ -22,6 +23,7 @@
       myFooter
     },
     computed: {
+      // computed property to return the state paramater which filters the todo list
       activeFilter () {
         return this.$route.query.filter
       }
